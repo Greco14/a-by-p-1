@@ -183,9 +183,8 @@ input {
 }
 
 section {
-    position:relative;
-    height:100%;
-    width:100%;
+      
+    
 }
 
 section .imgcoverIN {    
@@ -237,16 +236,13 @@ section .imgcoverIN {
 
 .allGals {
     width: 100%;
-    height: 500px; 
 }
 
 .allGals .middleHalf {
     height: 250px; 
 }
     
-.allGals .gridIt img {
-    width: 215px;
-    height: 215px;
+.allGals .gridIt img {    
     margin: 0 auto;
     position: absolute;
     left: 0;
@@ -264,19 +260,38 @@ section .imgcoverIN {
 .allGals .gridIt .colB {
     width: 60%;
     height: 90%;
-    background-color: #ed0000; 
+    /* background-color: #ed0000; */
 }
 
+.coloBlock1 img { height: 100%; }
+.coloBlock2 img { height: 100%; }
+.coloBlock3 img {}
+.coloBlock4 img { height: 100%; }
+.coloBlock5 img { height: 100%; }
+.coloBlock6 img { height: 100%; }
+.coloBlock7 img { height: 100%; }
+.coloBlock8 img { height: 100%; }
+.coloBlock9 img { }
+.coloBlock10 img { height: 100%; }
+.coloBlock11 img { height: 100%; }
+.coloBlock12 img { height: 100%; }
+.coloBlock13 img { height: 100%; }
+.coloBlock14 img { height: 100%; }
+.coloBlock15 img { height: 100%; }
+.coloBlock16 img { }
+.coloBlock17 img { height: 100%; }
+.coloBlock18 img { height: 100%; }
+
 .allGals .gridIt .colB.coloBlock1, .allGals .gridIt .colB.coloBlock8, .allGals .gridIt .colB.coloBlock18 {
-    background-color: yellow; 
+    /* background-color: yellow; */
 }
 
 .allGals .gridIt .colB.coloBlock4, .allGals .gridIt .colB.coloBlock6, .allGals .gridIt .colB.coloBlock9, .allGals .gridIt .colB.coloBlock11, .allGals .gridIt .colB.coloBlock12, .allGals .gridIt .colB.coloBlock13 {
-    background-color: #666666; 
+    /* background-color: #666666; */
 }
 
 .allGals .gridIt .colB.coloBlock5, .allGals .gridIt .colB.coloBlock10, .allGals .gridIt .colB.coloBlock15, .allGals .gridIt .colB.coloBlock17 {
-    background-color: green; 
+    /* background-color: green; */
 }
 
 .allGals .gridIt .colB.coloBlock1 {
@@ -452,10 +467,9 @@ section .imgcoverIN {
 
 .SfH {
     padding-top: 100px;
-    padding-bottom: 50px;
-    min-height: 350px;
-    height: 100%;
+    padding-bottom: 50px;    
     position: relative; 
+    min-height: 450px;
 }
 
 ::selection {

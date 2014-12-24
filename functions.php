@@ -335,8 +335,12 @@ function my_post_gallery( $output, $attr) {
             $i++;
         }
 
+        $image_attributes = wp_get_attachment_image_src( $id, $size ); // returns an array
+            if( $image_attributes ) 
+                $link = '<img src="'. $image_attributes[0] .'" />';
+
         // La galeria
-        $link = isset($attr['link']) && 'file' == $attr['link'] ? wp_get_attachment_link($id, 'large', false, false) : wp_get_attachment_link($id, 'large', true, false);
+        // $link = isset($attr['link']) && 'file' == $attr['link'] ? wp_get_attachment_link($id, 'full', false, false) : wp_get_attachment_link($id, 'full', true, false);
 
         $output .= "<{$itemtag} class='gallery-item gridIt section-third middleHalf'>";
         $output .= "<{$icontag} class='gallery-icon colB center-all colB coloBlock$i'>$link</{$icontag}>";
@@ -354,8 +358,9 @@ function my_post_gallery( $output, $attr) {
             
         $i++;
 
-        if($i == 18)
-            break;  
+        if($i == 18){
+            $i = 1;
+        }
     }
 
     $output .= "
