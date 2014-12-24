@@ -1,0 +1,492 @@
+html,body{
+    height:100%;
+    width:100%;
+    margin:0;
+    padding:0;
+    background-color: transparent;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, input {
+    color: #000;
+    text-decoration: none; 
+}
+
+p {
+  /*margin: 0 auto; */
+  position: relative; 
+}
+
+sub {
+    font-size: 10px;
+    top: -8px;
+    position: relative;
+    color: #fff;
+    left: -3px;
+    font-family: "c-regular"; 
+}
+
+h2, h3 {
+    font-family: "universa";
+    color: #666666;
+    font-size: 18px;
+    margin: 0 auto; 
+}
+
+h1, h4 {
+    text-align: center;
+    margin: 0;
+    font-size: 45px;
+    color: #fff;
+    font-family: "universa"; 
+}
+
+h4 {
+    border-top: 1px solid #666666; 
+}
+
+ul {
+    padding-left: 22px;
+    list-style: none; 
+}
+
+ul li {
+    font-family: "c-regular";
+    font-size: 15px;
+    color: #666666;
+    text-indent: -5px; 
+}
+
+ul li:before {
+    content: "-";
+    position: relative;
+    left: -10px; 
+}
+
+input {
+  outline: none;
+  border: none; 
+}
+
+.clearfix { clear: both; }
+
+@font-face {
+  font-family: "c-regular";
+  src: url("../fonts/courier_new_2-webfont.eot");
+  src: url("../fonts/courier_new_2-webfont.eot?#iefix") format("embedded-opentype"), 
+       url("../fonts/courier_new_2-webfont.woff") format("woff"), 
+       url("../fonts/courier_new_2-webfont.ttf") format("truetype"), 
+       url("../fonts/courier_new_2-webfont.svg#courier_newregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "c-newbold";
+  src: url("../fonts/courier_new_bold-webfont.eot");
+  src: url("../fonts/courier_new_bold-webfont.eot?#iefix") format("embedded-opentype"), 
+       url("../fonts/courier_new_bold-webfont.woff") format("woff"), 
+       url("../fonts/courier_new_bold-webfont.ttf") format("truetype"), 
+       url("../fonts/courier_new_bold-webfont.svg#courier_newbold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "universa";
+  src: url("../fonts/UniversLTStd-BoldEx.eot?") format("eot"), 
+       url("../fonts/UniversLTStd-BoldEx.otf") format("opentype"), 
+       url("../fonts/UniversLTStd-BoldEx.woff") format("woff"), 
+       url("../fonts/UniversLTStd-BoldEx.ttf") format("truetype"), 
+       url("../fonts/UniversLTStd-BoldEx.svg#UniversLTStd-BoldEx") format("svg"); }
+  
+#head {
+    padding-top: 10px;
+    position: fixed;
+    top: 0;
+    height: 65px;
+    z-index: 10; 
+    background-color: transparent;
+}
+
+.main-content { 
+    position: relative;
+    top: 75px;
+}
+
+#head .logoTop {
+    width: 226px;
+    height: 56px;
+    position: relative;
+    margin: 0 auto;
+    background-image: url("../images/home/logo.png");
+    float: left; 
+}
+
+#head .NavHold {
+    width: 750px;
+    height: 42px;
+    position: relative;
+    margin-top: 15px;
+    float: left;     
+}
+
+#head .NavHold li:before {
+    content: "";
+}
+
+#head .NavHold li {
+    position: relative;
+    float: left;
+    text-align: center;
+    font-family: "universa";
+    padding: 7px 0px 0px;
+    height: 24px;
+    position: relative;
+    margin-right: 25px;
+    text-indent: 0px !important;
+}
+
+#head .NavHold li:first-child {
+    padding-left: 0px;
+}
+
+#head .NavHold li:last-child {
+    margin-right: 0px;
+}
+
+#head .NavHold li a {
+    color: #666666;
+    font-size: 14px;
+    padding: 0 5px;
+}
+   
+#head .NavHold li.current-menu-item {
+    border-bottom: 5px solid #666666; 
+}
+
+#head .NavHold li:hover {
+    border-bottom: 5px solid #666666; 
+}
+
+#head.whiteMe .NavHold li a {
+    color: #FFF;
+    font-size: 14px;
+    padding: 0 5px;
+}
+
+#head.whiteMe .NavHold li.current-menu-item {
+    border-bottom: 5px solid #FFF; 
+}
+
+#head.whiteMe .NavHold li:hover {
+    border-bottom: 5px solid #FFF; 
+}
+        
+#head.whiteMe .logoTop {
+    background-image: url("../images/gui/logoW.png"); 
+}
+
+section {
+    position:relative;
+    height:100%;
+    width:100%;
+}
+
+section .imgcoverIN {    
+    position: relative;
+    width: 100%;
+}
+
+.footer {
+    width: 100%;
+    height: 30px;
+    position: fixed;
+    bottom: 0px; 
+    font-family: 'c-regular'
+}
+
+.footer .socialHold {
+    width: 500px;
+    margin: 0 auto; 
+}
+
+.footer .socialHold .btnIn {
+    width: 33.3%;
+    float: left; 
+}
+
+.footer .socialHold .btnIn p {
+    text-align: center;
+    color: #ed0000;
+    text-decoration: underline;
+    margin: 0px; 
+}
+
+.footer.whiteMe .socialHold .btnIn p {
+    color: #fff; 
+}
+
+.lineThis {
+    width: 20px;
+    height: 300px;
+    margin: 0 auto;
+    background-color: #000;
+    margin-top: 20px;
+    margin-bottom: 40px; 
+}
+
+.sectionGal, .sectionGal2, .sectionGal3 {
+    height: 25%;
+}
+
+.sectionGal .allGals, .sectionGal2 .allGals, .sectionGal3 .allGals {
+    width: 100%;
+    height: 500px; 
+}
+
+.sectionGal .allGals .middleHalf, .sectionGal2 .allGals .middleHalf, .sectionGal3 .allGals .middleHalf {
+    height: 250px; 
+}
+    
+.sectionGal .allGals .gridIt img, .sectionGal2 .allGals .gridIt img, .sectionGal3 .allGals .gridIt img {
+    width: 215px;
+    height: 215px;
+    margin: 0 auto;
+    position: absolute;
+    left: 0;
+    right: 0; 
+}
+
+.sectionGal2 {
+    height: 40% !important; 
+}
+
+.sectionGal3 {
+    height: 33.3% !important; 
+}
+
+.allGals .gridIt .colB {
+    width: 60%;
+    height: 90%;
+    background-color: #ed0000; 
+}
+
+.allGals .gridIt .colB.coloBlock1, .allGals .gridIt .colB.coloBlock8, .allGals .gridIt .colB.coloBlock18 {
+    background-color: yellow; 
+}
+
+.allGals .gridIt .colB.coloBlock4, .allGals .gridIt .colB.coloBlock6, .allGals .gridIt .colB.coloBlock9, .allGals .gridIt .colB.coloBlock11, .allGals .gridIt .colB.coloBlock12, .allGals .gridIt .colB.coloBlock13 {
+    background-color: #666666; 
+}
+
+.allGals .gridIt .colB.coloBlock5, .allGals .gridIt .colB.coloBlock10, .allGals .gridIt .colB.coloBlock15, .allGals .gridIt .colB.coloBlock17 {
+    background-color: green; 
+}
+
+.allGals .gridIt .colB.coloBlock1 {
+    left: 150px; 
+}
+
+.allGals .gridIt .colB.coloBlock2 {
+    width: 100%;
+    height: 60%;
+    left: 150px; 
+}
+
+.allGals .gridIt .colB.coloBlock4, .allGals .gridIt .colB.coloBlock5 {
+    width: 40%; 
+}
+
+.allGals .gridIt .colB.coloBlock4 {
+    left: 90px; 
+}
+
+.allGals .gridIt .colB.coloBlock5 {
+    height: 80%;
+    left: -70px; 
+}
+
+.allGals .gridIt .colB.coloBlock6 {
+    width: 90%; 
+}
+
+.allGals .gridIt .colB.coloBlock7 {
+    width: 95%; 
+}
+
+.allGals .gridIt .colB.coloBlock8 {
+    width: 50%;
+    height: 80%;
+    top: -50px;
+    left: 120px; 
+}
+
+.allGals .gridIt .colB.coloBlock10 {
+    width: 40%;
+    height: 80%;
+    left: 120px; 
+}
+
+.allGals .gridIt .colB.coloBlock11 {
+    top: -70px;
+    left: -20px; 
+}
+
+.allGals .gridIt .colB.coloBlock12 {
+    width: 80%;
+    height: 60%;
+    top: -220px;
+    left: 70px; 
+}
+
+.allGals .gridIt .colB.coloBlock14 {
+    width: 50%;
+    height: 50%;
+    left: 30px;
+    top: -120px; 
+}
+
+.allGals .gridIt .colB.coloBlock15 {
+    width: 95%;
+    top: -50px; 
+}
+
+.allGals .gridIt .colB.coloBlock17 {
+    height: 100%;
+    width: 50%;
+    left: -120px; 
+}
+
+.allGals .gridIt .colB.coloBlock18 {
+    height: 70%;
+    left: -60px;
+    top: -10px; 
+}
+
+.autoalpha-0 {
+    opacity: 0;
+    visibility: hidden; 
+}
+
+.align-center {
+    text-align: center; 
+}
+
+.center-all,
+.center-horizontal,
+.center-vertical {
+    position: absolute;
+    margin: auto; 
+}
+
+.center-all,
+.center-horizontal {
+    left: 0;
+    right: 0; 
+}
+
+.center-all,
+.center-vertical {
+    top: 0;
+    bottom: 0; 
+}
+
+.bgi {
+    background-position: center;
+    background-repeat: no-repeat; 
+}
+
+.center-h {
+    margin: 0 auto;
+    position: relative; 
+}
+
+.section-half, .section-third, .section-frt {
+    float: left;
+    position: relative; 
+}
+
+.section-half {
+    width: 50%; 
+}
+
+.section-third {
+    width: 33.3%; 
+}
+
+.section-frt {
+    width: 25%; 
+}
+
+#logoAn {
+    width: 87px;
+    height: 104px;
+    background-image: url("../images/home/anagrama.png");
+    position: fixed;
+    top: 30%;
+    right: 10%; 
+}
+
+#logoAn.whiteMe {
+    background-image: url("../images/gui/anagrama_w.png"); 
+}
+
+.featured-image {
+    min-width: 980px;
+    position: relative;
+    width: 100%;   
+}
+
+.featured-image img {
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.mainHold {
+    width: 100%;
+    position: relative; 
+}
+
+.safeArea {
+    width: 980px;
+    font-size: 14px;
+    font-family: "c-regular";
+}
+
+.SfH {
+    padding-top: 100px;
+    padding-bottom: 50px;
+    min-height: 350px;
+    height: 100%;
+    position: relative; 
+}
+
+::selection {
+  background: #ed0000;
+  color: #fff; }
+
+::-moz-selection {
+  background: #ed0000;
+  color: #fff; }
+
+
+/* OVERRIDE STYLE */
+section.gray {
+    background-color: #666666;    
+}
+
+section.red {
+    background-color: #ed0000;
+}
+
+section a {
+    color: #ed0000 !important;   
+}
+
+section.gray p, section.red p, section.gray a, section.red a {
+    color: #FFF !important; 
+}
+
+.gray strong, .red strong {
+    color: #FFF !important;
+    font-size: 16px;
+    font-family: "universa";
+    font-weight: normal;
+} 
