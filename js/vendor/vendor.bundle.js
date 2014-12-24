@@ -3,7 +3,8 @@ Navigation = function(){
         btn_nav: $('.menu-item'),
         btn_nav_in: $('.in-btn-nav'),
         
-        previus_events_section: $('#previous_events').offset().top,
+        home_section: $('#home').offset().top,
+        previous_events_section: $('#previous_events').offset().top,
         future_events_section : $('#future_events').offset().top,
         artists_section: $('#artists').offset().top,
         store_section: $('#store').offset().top,
@@ -90,7 +91,7 @@ Navigation.prototype.animation= function(actions){
         
             break;
         case 'previous_events':
-            var goTop = s.previus_events_section;
+            var goTop = s.previous_events_section;
             $('body').animate({
                 scrollTop: goTop
             }, 1500, elEasing);
@@ -125,8 +126,16 @@ Navigation.prototype.scrollControl = function(){
     var alto = $(window).height();
     $(window).scroll( function() {
         var scrolled_val = $(document).scrollTop().valueOf();
-        // console.log(scrolled_val);
-        if(scrolled_val > s.future_events_section){
+        console.log(scrolled_val);
+        
+        if(scrolled_val < s.future_events_section){
+            s.btn_nav.removeClass('current-menu-item');
+            $('#head').removeClass('whiteMe');
+            $('.footer').removeClass('whiteMe');
+            s.anam.removeClass('whiteMe');
+        }
+
+        if(scrolled_val >= s.future_events_section){
             s.btn_nav.removeClass('current-menu-item');
             // s.btn_nav_in.removeClass('no-nav');
             $('.future_events-btn').addClass('current-menu-item');
@@ -135,16 +144,16 @@ Navigation.prototype.scrollControl = function(){
             s.anam.removeClass('whiteMe');
         }
 
-        if(scrolled_val > s.gray_area1 && s.gray_area1 +alto ){
+        if(scrolled_val > s.gray_area1 && s.gray_area1 + alto ){
             $('#head').addClass('whiteMe');
         }
 
-        if(scrolled_val > s.gray_area1-500 && s.gray_area1 +alto){
+        if(scrolled_val > s.gray_area1-500 && s.gray_area1 + alto){
             $('.footer').addClass('whiteMe');
             s.anam.addClass('whiteMe');
         }
 
-        if(scrolled_val > s.previous_events_section){
+        if(scrolled_val >= s.previous_events_section){
             s.btn_nav.removeClass('current-menu-item');
             // s.btn_nav_in.removeClass('no-nav');
             $('.previous_events-btn').addClass('current-menu-item');
@@ -152,6 +161,7 @@ Navigation.prototype.scrollControl = function(){
             $('.footer').removeClass('whiteMe');
             s.anam.removeClass('whiteMe');
         }
+
         if(scrolled_val > s.red_area && s.red_area +alto){
             $('#head').addClass('whiteMe');
         }
@@ -160,28 +170,25 @@ Navigation.prototype.scrollControl = function(){
             s.anam.addClass('whiteMe');
         }
 
-        if(scrolled_val > s.artists_section){
+        if(scrolled_val >= s.artists_section){
             s.btn_nav.removeClass('current-menu-item');
-            // s.btn_nav_in.removeClass('no-nav');
             $('.artists-btn').addClass('current-menu-item');
 
             $('#head').removeClass('whiteMe');
             $('.footer').removeClass('whiteMe');
             s.anam.removeClass('whiteMe');
         }
-        if(scrolled_val > s.store_section-500){
-            $('.footer').addClass('whiteMe');
-            s.anam.addClass('whiteMe');
-        }
-        if(scrolled_val > s.store_section){
+        
+        if(scrolled_val >= s.store_section){
             s.btn_nav.removeClass('current-menu-item');
             // s.btn_nav_in.removeClass('no-nav');
             $('.store-btn').addClass('current-menu-item');
             $('#head').addClass('whiteMe');
-
+            $('.footer').addClass('whiteMe');
+            s.anam.addClass('whiteMe');
         }
 
-        if(scrolled_val > s.futurismo_section){
+        if(scrolled_val >= s.futurismo_section){
             s.btn_nav.removeClass('current-menu-item');
             // s.btn_nav_in.removeClass('no-nav');
             // $('#store-btn').addClass('active-nav');
@@ -190,28 +197,23 @@ Navigation.prototype.scrollControl = function(){
             s.anam.removeClass('whiteMe');
         }
 
-        if(scrolled_val > s.about_section-500){
-            $('.footer').addClass('whiteMe');
-            s.anam.addClass('whiteMe');
-        }
-
-        if(scrolled_val > s.about_section){
+        if(scrolled_val >= s.about_section){
             s.btn_nav.removeClass('current-menu-item');
             // s.btn_nav_in.removeClass('no-nav');
             $('.about-btn').addClass('current-menu-item');
             $('#head').addClass('whiteMe');
+            $('.footer').addClass('whiteMe');
+            s.anam.addClass('whiteMe');
         }
 
-        if(scrolled_val > s.contact_section-500){
-            $('.footer').removeClass('whiteMe');
-            s.anam.removeClass('whiteMe');
-        }
-
-        if(scrolled_val > s.contact_section){
+        if(scrolled_val > s.contact_section - 50){
             s.btn_nav.removeClass('current-menu-item');
             // s.btn_nav_in.removeClass('no-nav');
             $('.contact-btn').addClass('current-menu-item');
             $('#head').removeClass('whiteMe');
+
+            $('.footer').removeClass('whiteMe');
+            s.anam.removeClass('whiteMe');
         } 
     });
 };

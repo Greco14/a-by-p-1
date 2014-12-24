@@ -235,16 +235,16 @@ section .imgcoverIN {
     height: 25%;
 }
 
-.sectionGal .allGals, .sectionGal2 .allGals, .sectionGal3 .allGals {
+.allGals {
     width: 100%;
     height: 500px; 
 }
 
-.sectionGal .allGals .middleHalf, .sectionGal2 .allGals .middleHalf, .sectionGal3 .allGals .middleHalf {
+.allGals .middleHalf {
     height: 250px; 
 }
     
-.sectionGal .allGals .gridIt img, .sectionGal2 .allGals .gridIt img, .sectionGal3 .allGals .gridIt img {
+.allGals .gridIt img {
     width: 215px;
     height: 215px;
     margin: 0 auto;
