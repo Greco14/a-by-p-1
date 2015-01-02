@@ -280,7 +280,7 @@ function my_post_gallery( $output, $attr) {
         'itemtag'    => 'div',
         'icontag'    => 'div',
         'captiontag' => 'dd',
-        'columns'    => 3,
+        'columns'    => 4,
         'size'       => 'thumbnail',
         'include'    => '',
         'exclude'    => ''
@@ -323,49 +323,66 @@ function my_post_gallery( $output, $attr) {
 
     $selector = "gallery-{$instance}";
 
-    $output = '</div><div class="safeArea SfH center-h">';
-    $output .= apply_filters('gallery_style', "<div id='$selector' class='allGals gallery galleryid-{$id}'>");
+    $post_format = get_post_format($post->ID);
+    
+    if($post_format == 'gallery'){
+        // Galeria desordenada
+        $output = '</div><div class="safeArea SfH center-h">';
+        $output .= apply_filters('gallery_style', "<div id='$selector' class='allGals gallery galleryid-{$id}'>");
 
-    $i = 1;
+        $i = 1;
 
-    $no_image = array(3,9,16);
-    foreach ( $attachments as $id => $attachment ) {
-        if( in_array($i, $no_image)){            
-            $output .= "<{$itemtag} class='gallery-item gridIt section-third middleHalf'></{$itemtag}>";
+        $no_image = array(3,9,16);
+        foreach ( $attachments as $id => $attachment ) {
+            if( in_array($i, $no_image)){            
+                $output .= "<{$itemtag} class='gallery-item gridIt section-third middleHalf'></{$itemtag}>";
+                $i++;
+            }
+
+            $image_attributes = wp_get_attachment_image_src( $id, $size ); // returns an array
+                if( $image_attributes ) 
+                    $link = '<img src="'. $image_attributes[0] .'" />';
+
+            $output .= "<{$itemtag} class='gallery-item gridIt section-third middleHalf'>";
+            $output .= "<{$icontag} class='gallery-icon colB center-all colB coloBlock$i'>$link</{$icontag}>";
+            $output .= "</{$itemtag}>";
+                
+            $i++;
+            if($i == 18)
+                $i = 1;            
+        }
+
+        $output .= "
+                <br style='clear: both;' />
+            </div>\n";
+    }  
+    else {
+        // Galeria mas ordenadita
+        $output = '</div><div class="safeArea SfH center-h">';
+        $output .= apply_filters('gallery_style', "<div id='$selector' class='allGals gallery center-all galleryid-{$id}'>");
+
+        $i = 1;
+        foreach ( $attachments as $id => $attachment ) {
+            $image_attributes = wp_get_attachment_image_src( $id, 'thumbnail' ); // returns an array
+            if( $image_attributes ){                 
+                $link = '<img src="'. $image_attributes[0] .'"';
+
+                if( ( $i % 2 ) != 0)
+                    $link .= ' style="bottom: 0px;"';
+                
+                $link .= ' />';
+            }
+
+            // $link = isset($attr['link']) && 'file' == $attr['link'] ? wp_get_attachment_link($id, 'thumbnail', false, false) : wp_get_attachment_link($id, 'thumbnail', true, false);
+
+            $output .= "<{$itemtag} class='gallery-item gridIt section-frt middleHalf'>$link</{$itemtag}>";
+                
             $i++;
         }
 
-        $image_attributes = wp_get_attachment_image_src( $id, $size ); // returns an array
-            if( $image_attributes ) 
-                $link = '<img src="'. $image_attributes[0] .'" />';
-
-        // La galeria
-        // $link = isset($attr['link']) && 'file' == $attr['link'] ? wp_get_attachment_link($id, 'full', false, false) : wp_get_attachment_link($id, 'full', true, false);
-
-        $output .= "<{$itemtag} class='gallery-item gridIt section-third middleHalf'>";
-        $output .= "<{$icontag} class='gallery-icon colB center-all colB coloBlock$i'>$link</{$icontag}>";
-        /*if ( $captiontag && trim($attachment->post_excerpt) ) {
-            $output .= "
-                <{$captiontag} class='gallery-caption'>
-                " . wptexturize($attachment->post_excerpt) . "
-                </{$captiontag}>";
-        }*/
-
-        $output .= "</{$itemtag}>";
-        
-        // if ( $columns > 0 && ++$i % $columns == 0 )
-        //     $output .= '<br style="clear: both" />';
-            
-        $i++;
-
-        if($i == 18){
-            $i = 1;
-        }
-    }
-
-    $output .= "
-            <br style='clear: both;' />
-        </div>\n";
+        $output .= "<br style='clear: both;' />
+            </div>\n";
+    }        
 
     return $output;
 }
