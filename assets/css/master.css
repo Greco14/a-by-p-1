@@ -386,6 +386,7 @@ section .imgcoverIN {
 .center-all,
 .center-horizontal,
 .center-vertical {
+    position: absolute;
     margin: auto; 
 }
 

@@ -359,7 +359,7 @@ function my_post_gallery( $output, $attr) {
     else {
         // Galeria mas ordenadita
         $output = '</div><div class="safeArea SfH center-h">';
-        $output .= apply_filters('gallery_style', "<div id='$selector' class='allGals gallery center-all galleryid-{$id}'>");
+        $output .= apply_filters('gallery_style', "<div id='$selector' class='allGals gallery center-all galleryid-{$id}' style='position:relative !important;'>");
 
         $i = 1;
         foreach ( $attachments as $id => $attachment ) {
