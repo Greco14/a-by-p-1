@@ -339,9 +339,11 @@ function my_post_gallery( $output, $attr) {
                 $i++;
             }
 
-            $image_attributes = wp_get_attachment_image_src( $id, $size ); // returns an array
-                if( $image_attributes ) 
-                    $link = '<img src="'. $image_attributes[0] .'" />';
+            $image_attributes = wp_get_attachment_image_src( $id, 'medium' ); // returns an array
+            $full_image = wp_get_attachment_image_src( $id, 'full');
+            
+            if( $image_attributes ) 
+                $link = '<a href="'. $full_image[0] .'" target="_blank"><img src="'. $image_attributes[0] .'" /></a>';
 
             $output .= "<{$itemtag} class='gallery-item gridIt section-third middleHalf'>";
             $output .= "<{$icontag} class='gallery-icon colB center-all colB coloBlock$i'>$link</{$icontag}>";
@@ -364,13 +366,14 @@ function my_post_gallery( $output, $attr) {
         $i = 1;
         foreach ( $attachments as $id => $attachment ) {
             $image_attributes = wp_get_attachment_image_src( $id, 'thumbnail' ); // returns an array
+            $full_image = wp_get_attachment_image_src( $id, 'full');
             if( $image_attributes ){                 
-                $link = '<img src="'. $image_attributes[0] .'"';
+                $link = '<a href="'. $full_image[0] .'" target="_blank"><img src="'. $image_attributes[0] .'"';
 
                 if( ( $i % 2 ) != 0)
                     $link .= ' style="bottom: 0px;"';
                 
-                $link .= ' />';
+                $link .= ' /></a>';
             }
 
             // $link = isset($attr['link']) && 'file' == $attr['link'] ? wp_get_attachment_link($id, 'thumbnail', false, false) : wp_get_attachment_link($id, 'thumbnail', true, false);
